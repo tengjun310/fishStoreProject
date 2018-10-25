@@ -23,10 +23,7 @@
     
     //初始化app服务
     [self initService];
-    
-    //初始化IM
-    [[IMManager sharedIMManager] initIM];
-    
+        
     //初始化用户系统
     [self initUserManager];
     

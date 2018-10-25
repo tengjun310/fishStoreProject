@@ -58,7 +58,6 @@
 #import "AppManager.h"
 #import "ShareManager.h"
 #import "UserManager.h"
-#import "IMManager.h"
 #import "UIButton+XYButton.h"
 
 //第三方

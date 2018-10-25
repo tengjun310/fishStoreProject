@@ -114,24 +114,10 @@ SINGLETON_FOR_CLASS(UserManager);
         if (ValidDict(responseObject[@"data"])) {
             NSDictionary *data = responseObject[@"data"];
             if (ValidStr(data[@"imId"]) && ValidStr(data[@"imPass"])) {
-                //登录IM
-                [[IMManager sharedIMManager] IMLogin:data[@"imId"] IMPwd:data[@"imPass"] completion:^(BOOL success, NSString *des) {
-                    [MBProgressHUD hideHUD];
-                    if (success) {
-                        self.curUserInfo = [UserInfo modelWithDictionary:data];
-                        [self saveUserInfo];
-                        self.isLogined = YES;
-                        if (completion) {
-                            completion(YES,nil);
-                        }
-                        KPostNotification(KNotificationLoginStateChange, @YES);
-                    }else{
-                        if (completion) {
-                            completion(NO,@"IM登录失败");
-                        }
-                        KPostNotification(KNotificationLoginStateChange, @NO);
-                    }
-                }];
+                if (completion) {
+                    completion(YES,nil);
+                }
+                KPostNotification(KNotificationLoginStateChange, @YES);
             }else{
                 if (completion) {
                     completion(NO,@"登录返回数据异常");
@@ -178,8 +164,6 @@ SINGLETON_FOR_CLASS(UserManager);
     [[UIApplication sharedApplication] unregisterForRemoteNotifications];
     
 //    [[NSNotificationCenter defaultCenter] postNotificationName:KNotificationLogout object:nil];//被踢下线通知用户退出直播间
-    
-    [[IMManager sharedIMManager] IMLogout];
     
     self.curUserInfo = nil;
     self.isLogined = NO;

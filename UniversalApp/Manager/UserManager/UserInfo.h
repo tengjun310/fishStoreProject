@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@class GameInfo;
 
 typedef NS_ENUM(NSInteger,UserGender){
     UserGenderUnKnow = 0,
@@ -27,6 +26,5 @@ typedef NS_ENUM(NSInteger,UserGender){
 @property (nonatomic,assign) NSInteger  degreeId;//用户等级
 @property (nonatomic,copy) NSString * signature;//个性签名
 @property (nonatomic,copy) NSString * token;//用户登录后分配的登录Token
-@property (nonatomic, strong) GameInfo *info;//游戏数据
 
 @end

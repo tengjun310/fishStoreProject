@@ -70,6 +70,8 @@
 		29D3C00A1F4D11A200FD3914 /* TagsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D3C0081F4D11A200FD3914 /* TagsButton.m */; };
 		29FEE7681ECEC27900C81B60 /* MBProgressHUD+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */; };
 		5BC8C50C0BEF57AA0780D5DC /* libPods-UniversalApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E884624664B432D4FE5044F /* libPods-UniversalApp.a */; };
+		661A219F21869AE900A3C09F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 661A219A21869AE900A3C09F /* libWeChatSDK.a */; };
+		661A21A021869AE900A3C09F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661A219B21869AE900A3C09F /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +193,11 @@
 		29D3C0081F4D11A200FD3914 /* TagsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsButton.m; sourceTree = "<group>"; };
 		29FEE7661ECEC27900C81B60 /* MBProgressHUD+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XY.h"; sourceTree = "<group>"; };
 		29FEE7671ECEC27900C81B60 /* MBProgressHUD+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XY.m"; sourceTree = "<group>"; };
+		661A219A21869AE900A3C09F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		661A219B21869AE900A3C09F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		661A219C21869AE900A3C09F /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		661A219D21869AE900A3C09F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		661A219E21869AE900A3C09F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		9E884624664B432D4FE5044F /* libPods-UniversalApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UniversalApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51AB222BA7ACF202B5B1330 /* Pods-UniversalApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversalApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniversalApp/Pods-UniversalApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +209,7 @@
 			files = (
 				296ED8B41EF3B6A300E33961 /* libPods-UniversalApp.a in Frameworks */,
 				299610251ED84B5100BCED2A /* libSocialQQ.a in Frameworks */,
+				661A219F21869AE900A3C09F /* libWeChatSDK.a in Frameworks */,
 				299610261ED84B5100BCED2A /* libSocialWeChat.a in Frameworks */,
 				299610131ED84A8D00BCED2A /* CoreGraphics.framework in Frameworks */,
 				299610111ED84A7100BCED2A /* libsqlite3.tbd in Frameworks */,
@@ -340,6 +348,7 @@
 		293D45AC1ECD6926007C64A9 /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				661A219921869AE900A3C09F /* WeChatSDK1.8.3 */,
 				299610141ED84B5100BCED2A /* UMSocial */,
 			);
 			path = ThridParty;
@@ -792,6 +801,18 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		661A219921869AE900A3C09F /* WeChatSDK1.8.3 */ = {
+			isa = PBXGroup;
+			children = (
+				661A219A21869AE900A3C09F /* libWeChatSDK.a */,
+				661A219B21869AE900A3C09F /* README.txt */,
+				661A219C21869AE900A3C09F /* WechatAuthSDK.h */,
+				661A219D21869AE900A3C09F /* WXApi.h */,
+				661A219E21869AE900A3C09F /* WXApiObject.h */,
+			);
+			path = WeChatSDK1.8.3;
+			sourceTree = "<group>";
+		};
 		6C3D66AC810B3ABDE56945D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,8 +860,7 @@
 				TargetAttributes = {
 					296F9EB71ECC64CE0063A255 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 63V2ZJP9UV;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -877,6 +897,7 @@
 				293D45A21ECD6422007C64A9 /* LaunchScreen.storyboard in Resources */,
 				293D45A31ECD6422007C64A9 /* Info.plist in Resources */,
 				2996102B1ED84B5100BCED2A /* UMSocialSDKResources.bundle in Resources */,
+				661A21A021869AE900A3C09F /* README.txt in Resources */,
 				299610291ED84B5100BCED2A /* UMSocialSDKPromptResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1102,7 +1123,8 @@
 			baseConfigurationReference = A51AB222BA7ACF202B5B1330 /* Pods-UniversalApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 63V2ZJP9UV;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1118,9 +1140,11 @@
 					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/QQ",
 					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/WeChatSDK1.8.3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nb.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/UniversalApp/Define";
 			};
@@ -1131,7 +1155,8 @@
 			baseConfigurationReference = 14ED69325E9FD4BDB1CA95F8 /* Pods-UniversalApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 63V2ZJP9UV;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1147,9 +1172,11 @@
 					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/QQ",
 					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/UniversalApp/ThridParty/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/UniversalApp/ThridParty/WeChatSDK1.8.3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nb.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/UniversalApp/Define";
 			};

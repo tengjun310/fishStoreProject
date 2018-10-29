@@ -10,6 +10,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import "LoginViewController.h"
 #import "OpenUDID.h"
+#import "WXApi.h"
 
 @implementation AppDelegate (AppService)
 
@@ -108,7 +109,7 @@
         
     }
     //展示FPS
-    [AppManager showFPS];
+//    [AppManager showFPS];
 }
 
 
@@ -117,19 +118,17 @@
 {
     BOOL isNetWork = [notification.object boolValue];
     
-    if (isNetWork) {//有网络
+    if (isNetWork) {//有网络   ······
         if ([userManager loadUserInfo] && !isLogin) {//有用户数据 并且 未登录成功 重新来一次自动登录
             [userManager autoLoginToServer:^(BOOL success, NSString *des) {
                 if (success) {
                     DLog(@"网络改变后，自动登录成功");
-//                    [MBProgressHUD showSuccessMessage:@"网络改变后，自动登录成功"];
                     KPostNotification(KNotificationAutoLoginSuccess, nil);
                 }else{
                     [MBProgressHUD showErrorMessage:NSStringFormat(@"自动登录失败：%@",des)];
                 }
             }];
         }
-        
     }else {//登陆失败加载登陆页面控制器
         [MBProgressHUD showTopTipMessage:@"网络状态不佳" isWindow:YES];
     }
@@ -146,6 +145,13 @@
     
     [self configUSharePlatforms];
 }
+
+#pragma mark ——————— 注册微信支付 ——————————
+
+- (void)initWXAPI{
+    [WXApi registerApp:@""];
+}
+
 #pragma mark ————— 配置第三方 —————
 -(void)configUSharePlatforms{
     /* 设置微信的appKey和appSecret */
@@ -178,7 +184,6 @@
 {
     // 网络状态改变一次, networkStatusWithBlock就会响应一次
     [PPNetworkHelper networkStatusWithBlock:^(PPNetworkStatusType networkStatus) {
-        
         switch (networkStatus) {
                 // 未知网络
             case PPNetworkStatusUnknown:
@@ -197,9 +202,7 @@
                 KPostNotification(KNotificationNetWorkStateChange, @YES);
                 break;
         }
-        
     }];
-    
 }
 
 + (AppDelegate *)shareAppDelegate{
@@ -207,8 +210,7 @@
 }
 
 
--(UIViewController *)getCurrentVC{
-    
+- (UIViewController *)getCurrentVC{
     UIViewController *result = nil;
     
     UIWindow * window = [[UIApplication sharedApplication] keyWindow];
@@ -236,7 +238,7 @@
     return result;
 }
 
--(UIViewController *)getCurrentUIVC
+- (UIViewController *)getCurrentUIVC
 {
     UIViewController  *superVC = [self getCurrentVC];
     

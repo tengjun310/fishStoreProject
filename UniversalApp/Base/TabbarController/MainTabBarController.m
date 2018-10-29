@@ -50,8 +50,16 @@
 #pragma mark - ——————— 初始化VC ————————
 -(void)setUpAllChildViewController{
     _VCS = @[].mutableCopy;
-//    [self setupChildViewController:homeVC title:@"首页" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
-    
+    HomeViewController * homeVC1 = [HomeViewController new];
+    HomeViewController * homeVC2 = [HomeViewController new];
+    HomeViewController * homeVC3 = [HomeViewController new];
+    HomeViewController * homeVC4 = [HomeViewController new];
+
+    [self setupChildViewController:homeVC1 title:@"首页1" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
+    [self setupChildViewController:homeVC2 title:@"首页2" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
+    [self setupChildViewController:homeVC3 title:@"首页3" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
+    [self setupChildViewController:homeVC4 title:@"首页4" imageName:@"icon_tabbar_homepage" seleceImageName:@"icon_tabbar_homepage_selected"];
+
     self.viewControllers = _VCS;
 }
 
@@ -70,7 +78,6 @@
     
 //    [self addChildViewController:nav];
     [_VCS addObject:nav];
-    
 }
 
 

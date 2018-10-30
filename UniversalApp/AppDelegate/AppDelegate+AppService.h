@@ -27,6 +27,9 @@
 //注册微信api
 - (void)initWXAPI;
 
+//初始化IQKeyBoard
+- (void)initIQKeyBoard;
+
 //初始化用户系统
 -(void)initUserManager;
 

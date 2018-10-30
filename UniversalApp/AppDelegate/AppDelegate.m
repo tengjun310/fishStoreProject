@@ -19,13 +19,19 @@
     [self initWindow];
     
     //UMeng初始化
-//    [self initUMeng];
+    [self initUMeng];
     
     //初始化app服务
     [self initService];
         
     //初始化用户系统
     [self initUserManager];
+    
+    //初始化微信SDK
+    [self initWXAPI];
+    
+    //初始化IQKeyBoard
+    [self initIQKeyBoard];
     
     //网络监听
     [self monitorNetworkStatus];
